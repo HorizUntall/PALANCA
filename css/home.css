@@ -18,6 +18,13 @@ nav {
     font-size: large;
 }
 
+.navbar-links {
+    display: none;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:lighter;
+    font-size: .8em;
+}
+
 
 .card-container {
     display: flex;
@@ -30,14 +37,14 @@ nav {
     display:flex;
     flex-direction: column;
     width: 300px;
-    height: 500px;
+    aspect-ratio: 3 / 5;
     margin-top: 50px;
     font-size: 16px;
 }
 
 .person-image {
     width: 300px;
-    height: 400px;
+    aspect-ratio: 3 / 4;
 }
 
 #name {
@@ -50,19 +57,23 @@ nav {
 }
 
 #quote {
+    display: inline-flex;
     width: auto;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight:lighter;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
     font-size: .8em;
     margin-top: 10px;
+    border-style: solid;
 }
 
 #quote img {
     height: 2em;
     width: auto;
+}
+
+#quote p {
+    width: 80%;
 }
 
 #message-link {
@@ -71,4 +82,30 @@ nav {
     font-size: 1em;
     margin-top: 10px;
     text-align: center;
+}
+
+/* IF SCREEN IS FOR DESKTOP/LAPTOP */
+@media only screen and (min-width: 600px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .navbar-links {
+        display: flex;
+    }
+
+    .card-container {
+        width: 75vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card {
+        width: 15vw;
+    }
+
+    .person-image {
+        width: 15vw;
+    }
+
 }
