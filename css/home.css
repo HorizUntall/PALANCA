@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aquamarine;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around ;
+    flex-wrap: wrap;
+    border-style: solid;
+    gap: 10px;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    background-color: blue; 
+    margin-top: 50px;
+}
+
+.person-image {
+    width: 300px;
+    height: 400px;
+}
+
+h3 {
+    width: 100%;
+    font-family: cursive;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h4 {
+    width: 100%;
+    font-family: cursive;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+}
