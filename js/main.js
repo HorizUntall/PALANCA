@@ -35,9 +35,10 @@ function get_json() {
     fetchData('../data/curie_sample.json')
     .then(data => {
         if (data) {
+            // LOOPS THROUGH THE PEOPLE TO ADD A CARD
             for (let i = 0; i < data.length; i++) {
                 const person = data[i];
-                add_card(person['Name'], person['Quote']); // Output: apple, banana, orange
+                add_card(person['Name'], person['Quote']); // Adding a card 
             }
         } else {
         console.log('Failed to retrieve data');
@@ -45,7 +46,6 @@ function get_json() {
     });
     console.log(all_data)
 }
-  
-// Example usage: Replace 'data.json' with your actual file path
+
 
   
