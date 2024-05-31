@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aquamarine;
+}
+
+.add-card {
+    background-color: blueviolet;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around ;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    width: 300px;
+    aspect-ratio: 3 / 5;
+    margin-top: 50px;
+    font-size: 16px;
+    background-color: antiquewhite;
+}
+
+.person-image {
+    width: 300px;
+    aspect-ratio: 3 / 4;
+}
+
+#name {
+    width: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#quote {
+    display: inline-flex;
+    width: auto;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: .8em;
+    margin-top: 10px;
+    border-style: solid;
+}
+
+#quote img {
+    height: 2em;
+    width: auto;
+}
+
+#quote p {
+    width: 80%;
+}
+
+#message-link {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:lighter;
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
+}
