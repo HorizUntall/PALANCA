@@ -3,6 +3,7 @@ function simple_alert() {
     alert('Eyo');
 }
 
+// IEDIT PA NI BASED ON LEIGH'S FORMAT
 function add_card(name, quote) {
     let container = document.querySelector(".cards-container"); 
     container.innerHTML += `
