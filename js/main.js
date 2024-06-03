@@ -3,18 +3,21 @@
 {/* <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js"></script> */}
 
 // IEDIT PA NI BASED ON LEIGH'S FORMAT
-function add_card(name, quote) {
-    let container = document.querySelector(".cards-container"); 
+function add_card(code, name, quote) {
+    let container = document.querySelector(".card-container"); 
+    let namelist = name.split(",");
     container.innerHTML += `
-    <div class="card" id="person1">
-        <img class="person-image" src="../media/images/image.png" alt="image">
-        <span id="name" >${name}</span>
-        <span id="quote">
-            <img src="../media/images/image.png" alt="quote-marks">
-            <p>${quote}</p>
+    <div class="card">
+        <a href="profile.html"><img class="photo" src="../media/images/Curie/${code}.JPG" alt="image"></a>
+        
+        <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
+        
+        <span class="quote">
+            <img src="../media/images/image.png" alt="image">
+            <p>"${quote}"</p>
         </span>
-        <span id="message-link">👉Send me a message!👈</span>
-    </div>`
+    </div>
+    `
 }
 
 async function fetchData(filePath) {
@@ -31,14 +34,22 @@ async function fetchData(filePath) {
     }
 }
 
-function get_json() {
-    fetchData('../data/curie_sample.json')
+function get_json(section) {
+    var file_path;
+    if (section == 'curie') {
+        file_path = '../data/curie_sample.json';
+    } else if (section == 'tesla') {
+        file_path = '../data/tesla_sample.json';
+    } else if (section == 'einstein') {
+        file_path = '../data/einstein_sample.json';
+    };
+    fetchData(file_path)
     .then(data => {
         if (data) {
             // LOOPS THROUGH THE PEOPLE TO ADD A CARD
             for (let i = 0; i < data.length; i++) {
                 const person = data[i];
-                add_card(person['Name'], person['Quote']); // Adding a card 
+                add_card(person['Code'] ,person['Name'], person['Quote']); // Adding a card 
             }
         } else {
         console.log('Failed to retrieve data');
