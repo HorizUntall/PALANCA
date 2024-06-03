@@ -4,53 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/profile.css">
-
-    <script type="text/javascript">
-    </script>
-
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-    <!--nav>
-        <h1 class="burger-menu">☰</h1>
-        <div class="navbar-links">
-            <a>Home</a>
-            <a>Curie</a>
-            <a>Einstein</a>
-            <a>Tesla</a>
-            <a>About</a>
-        </div>
-        
-        <p>Navbar cherva</p>
-    </nav>
 
     <h1 class="bg">
-        <span id="section">CURIE</div>
-        <span id="nickname">CARYL</div>
-    </h1-->
-    <div class="profile-container">
+        <div id="section">CURIE</div>
+        <div id="nickname">CARYL</div>
+    </h1>
 
-        <div class="profile">
-            <img class="photo" src="..\media\images\image.png" alt="image">
+    <div class="card-container">
+
+        <div class="card">
+            <img class="photo" src="..\media\images\Curie\Agawin.JPG" alt="image">
             
-            <div class="bio">
-
-                <div class="name">Caryl Jan Pauline</div>
-
-                <span class="quote">
-                    <img src="..\media\images\quote.png" alt="image">
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                </span>
-
-                <!--span class="message">
-                    <textarea>Leave me a message!</textarea>
-                </span-->
-
-            </div>
-
-
-        </div>
-
+            <span class="name"><span id="surname">Agawin, </span>Caryl Jan Pauline</span>
+            
+            <span class="quote">
+                <img src="..\media\images\quote.png" alt="image">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            </span>
+            <textarea placeholder="Sender (Optional)" id="sender" wrap="hard" maxlength="50"></textarea>
+            <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
+            <button id="send">Submit</button>
     </div>
 </body>
 </html>

@@ -62,13 +62,32 @@ nav {
     z-index: 1;
 }
 
+
+a {
+    color: #737373;
+    text-decoration: none;
+}
+
+
+
+a:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+
+
 .name {
+    margin: .5em 0 0 0;
     font-weight: bold;
     text-align: center;
     
     font-size: 2em;
     z-index: 5;
 }
+
+
 
 #surname {
     color: #615BD1
