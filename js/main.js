@@ -65,11 +65,7 @@ function get_person() {
     return [param1Value, param2Value];
 }
 
-function get_person_data() {
-    let data = get_person();
-    let section = data[0];
-    let code = data[1];
-    
+function get_file_path(section) {
     var file_path;
     if (section == 'curie') {
         file_path = '../data/curie_sample.json';
@@ -78,6 +74,16 @@ function get_person_data() {
     } else if (section == 'einstein') {
         file_path = '../data/einstein_sample.json';
     };
+    return file_path
+}
+
+function get_person_data() {
+    let data = get_person();
+    let section = data[0];
+    let code = data[1];
+    
+    file_path = get_file_path(section);
+
     fetchData(file_path)
     .then(data => {
         if (data) {
@@ -111,7 +117,7 @@ function update_profile(section, code, name, quote) {
         </span>
         <textarea placeholder="Sender (Optional)" id="sender" wrap="hard" maxlength="50"></textarea>
         <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
-        <button id="send">Submit</button>
+        <button id="send" onclick="send_email()">Submit</button>
     </div>
     `
     container.innerHTML += new_card;
@@ -128,5 +134,47 @@ function design_bg(section, name) {
     container.innerHTML += newText;
 }
 
+function send_email() {
+    emailjs.init('4G8nmjkLjUIn1czkk');
+    let sender = document.querySelector("#sender").value; 
+    let message = document.querySelector("#txtbox").value;
+    let button =  document.querySelector("#send");
+
+    let data = get_person();
+    let section = data[0];
+    let code = data[1];
+    file_path = get_file_path(section);
+
+
+    button.value = 'Sending...'
+    fetchData(file_path)
+    .then(data => {
+        if (data) {
+            for (let i = 0; i < data.length; i++) {
+                let person = data[i];
+                if (person['Code'] == code) {
+
+                    var templateParams = {
+                        from_name: sender,
+                        message: message,
+                        send_to: person['Email']
+                    };
+                
+                    emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
+                    .then(function(response) {
+                      console.log('SUCCESS!', response.status, response.text);
+                      button.value = 'Submit';
+                    }, function(error) {
+                      console.log('FAILED...', error);
+                      button.value = 'Submit';
+                    });
+                }
+            }
+        } else {
+        console.log('Failed to retrieve data');
+        }
+    });
+    
+}
 
   
