@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="../js/main.js"></script>
+    <script>
+        window.onload = get_person_data();
+    </script>
 </head>
 <body>
 
@@ -15,18 +19,6 @@
 
     <div class="card-container">
 
-        <div class="card">
-            <img class="photo" src="..\media\images\Curie\Agawin.JPG" alt="image">
-            
-            <span class="name"><span id="surname">Agawin, </span>Caryl Jan Pauline</span>
-            
-            <span class="quote">
-                <img src="..\media\images\quote.png" alt="image">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-            </span>
-            <textarea placeholder="Sender (Optional)" id="sender" wrap="hard" maxlength="50"></textarea>
-            <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
-            <button id="send">Submit</button>
     </div>
 </body>
 </html>
