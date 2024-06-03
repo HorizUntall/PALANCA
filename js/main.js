@@ -96,7 +96,6 @@ function get_person_data() {
 }
 
 function update_profile(section, code, name, quote) {
-    console.log(section, code, name, quote);
     let container = document.querySelector(".card-container"); 
     container.innerHTML = '';
     let namelist = name.split(",");
@@ -116,6 +115,17 @@ function update_profile(section, code, name, quote) {
     </div>
     `
     container.innerHTML += new_card;
+    design_bg(section, namelist[0].trim());
+}
+
+function design_bg(section, name) {
+    let container = document.querySelector(".bg"); 
+    container.innerHTML = '';
+    let newText = `
+    <div id="section">${section.toUpperCase()}</div>
+    <div id="nickname">${name.toUpperCase()}</div>
+    `
+    container.innerHTML += newText;
 }
 
 
