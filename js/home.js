@@ -22,25 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the navbar as transparent
     if (window.scrollY <= 50) {
         navbar.classList.add("navbar-transparent");
-    }
-
-    // Curie Button
-    const viewCurie = document.getElementById('curie_button');
-    viewCurie.addEventListener('click', () => {
-        console.log("Curie");
-    });
-
-    //Einstein Button
-    const viewEinstein = document.getElementById('einstein_button');
-    viewEinstein.addEventListener('click', () => {
-        console.log("Einstein")
-    });
-
-    //Tesla Button
-    const viewTesla = document.getElementById('tesla_button');
-    viewTesla.addEventListener('click', () =>{
-        console.log("Tesla")
-    })
+    };
 
     // Parallax
     let title = document.getElementById('asilakon_title');
@@ -48,13 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         let scrollPosition = window.scrollY;
+        const viewStudents = document.querySelector('.view_students');
 
         title.style.marginTop = scrollPosition * 1.5 + 'px';
         hub.style.marginTop = scrollPosition * -0.5 + 'px';
 
+        // viewStudents.forEach(object => {
+        //     object.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+        // });
+
         document.getElementById('background_label').style.transform = `translateY(${scrollPosition * 0.2}px)`;
+        document.getElementById('curie_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
+        document.getElementById('einstein_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
+        document.getElementById('tesla_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
 
     });
 });
 
 
+//Navigate
+function navigate(destination) {
+    window.location.href = destination;
+};

@@ -99,7 +99,7 @@ body {
 
 .group_picture-wrapper {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: auto;
     overflow: hidden;
     display: flex;
@@ -246,7 +246,7 @@ body {
     .section_picture {
         width: 40%;
         height: auto;
-        margin-left: 6vw;
+        padding-left: 6vw;
     }
     
     #background_label {
@@ -277,7 +277,7 @@ body {
         font-size: 9vw;
         color: #615BD1;
         /* position: absolute; */
-        margin-left: 60px;
+        padding-left: 60px;
         grid-column: 1;
         grid-row: 1;
     }
@@ -306,6 +306,7 @@ body {
         font-weight: bold;
         height: 5vh;
         width: 17vw;
+        /* width: calc(auto + 20px); */
         text-align: center;
         border-radius: 25px;
         margin-left: 60px;
@@ -313,9 +314,26 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        border: none;
 
-        transition: transform 0.1s ease-out;
+        transition: transform 0.9s ease-out;
     }
+
+    #item1 {
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 25%;
+        height: auto;
+        /* margin-right: -200px;
+        margin-bottom: -300px; */
+        margin-right: -10%;
+        margin-bottom: -15%;
+        z-index: -10;
+    }
+
 }
 
 
@@ -342,18 +360,16 @@ body {
     }
 
     #background_label {
-        font-family: 'HelveticaWorld';
+        color: rgba(0,0,0,0);
+        /* font-family: 'HelveticaWorld';
+        color: #E9E7F9;
         font-weight: bolder;
-        transform: rotate(0deg);
         z-index: -10;
         position: absolute;
-        /* left: -100; */
-        transform: translateY(-50%);
-        writing-mode: vertical-lr;
-        /* text-orientation: upright; */
-        /* font-size: 40px; */
-        font-size: calc(50vw);
-        margin-top: calc(100vh);
+        writing-mode:vertical-rl;
+        right: 0;
+        font-size: 40vw;
+        border-style: solid; */
     }
 
     .section_name {
@@ -397,6 +413,12 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        border: none;
+    }
+
+    #item1 {
+        width: 0px;
+        height: 0px;
     }
 
 }
