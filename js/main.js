@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 function go_profile(section, code) {
     window.location.href = `profile.html?section=${section}&code=${code}`;
 }
@@ -171,17 +173,24 @@ function send_email() {
                         send_to: person['Email']
                     };
 
+                    var archiveData = {
+                        to_name: btoa(code),
+                        to_email: btoa(person['Email']),
+                        from_name: btoa(sender),
+                        message: btoa(message)
+                    }
+
                     // If u see this and youre planning on doing smth, send me an email pls raphaelbihag00@gmail.com
                     emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
                     .then(function(response) {
-                      console.log('SUCCESS!', response.status, response.text);
-                      button.innerHTML = 'Submit';
-                      sender = '';
-                      message = '';
+                        console.log('SUCCESS!', response.status, response.text);
+                        button.innerHTML = 'Submit';
+                        alert('Success Sending Message');
+                        writeJsonToFile(archiveData, '../data/msg.json');
                     }, function(error) {
-                      console.log('FAILED...', error);
-                      alert('Error Sending Message');
-                      button.innerHTML = 'Submit Again';
+                        console.log('FAILED...', error);
+                        alert('Error Sending Message');
+                        button.innerHTML = 'Submit Again';
                     });
                 }
             }
@@ -191,6 +200,15 @@ function send_email() {
     });
     
 }
+
+function writeJsonToFile(data, filename) {
+    const jsonString = JSON.stringify(data, null, 4); // Stringify with indentation
+    try {
+      fs.writeFileSync(filename, jsonString);
+    } catch (error) {
+      console.error("Error writing file:", error);
+    }
+}  
 
 function nextAndscroll(page, target) {
     console.log('SCORONSDF');
