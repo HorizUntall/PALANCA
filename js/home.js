@@ -48,11 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//Navigate
-function navigate(destination) {
-    window.location.href = destination;
-};
-
 function scrollToSection(target) {
     document.getElementById(target).scrollIntoView({
         behavior: 'smooth'
