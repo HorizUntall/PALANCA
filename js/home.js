@@ -42,4 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Tesla")
     })
 
+    // Parallax
+    let title = document.getElementById('asilakon_title');
+    let hub = document.getElementById('graduates_hub_title');
+
+    window.addEventListener('scroll', () => {
+        let scrollPosition = window.scrollY;
+
+        title.style.marginTop = scrollPosition * 1.5 + 'px';
+        hub.style.marginTop = scrollPosition * -0.5 + 'px';
+
+        document.getElementById('background_label').style.transform = `translateY(${scrollPosition * 0.2}px)`;
+
+    });
 });
+
+
