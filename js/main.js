@@ -127,7 +127,7 @@ function update_profile(section, code, name, quote) {
             <img src="../media/images/quote.png" alt="image">
             <p>"${quote}"</p>
         </span>
-        <textarea placeholder="Sender (Optional)" id="sender" wrap="hard" maxlength="50"></textarea>
+        <textarea placeholder="Sender (or Codename)" id="sender" wrap="hard" maxlength="50"></textarea>
         <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
         <button id="send" onclick="send_email()">Submit</button>
     </div>
@@ -157,7 +157,7 @@ function send_email() {
     let code = data[1];
     file_path = get_file_path(section);
 
-    button.value = 'Sending...';
+    button.innerHTML = 'Sending...';
     fetchData(file_path)
     .then(data => {
         if (data) {
@@ -170,17 +170,18 @@ function send_email() {
                         message: message,
                         send_to: person['Email']
                     };
-                
+
+                    // If u see this and youre planning on doing smth, send me an email pls raphaelbihag00@gmail.com
                     emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
                     .then(function(response) {
                       console.log('SUCCESS!', response.status, response.text);
-                      button.value = 'Submit';
+                      button.innerHTML = 'Submit';
                       sender = '';
                       message = '';
                     }, function(error) {
                       console.log('FAILED...', error);
                       alert('Error Sending Message');
-                      button.value = 'Submit';
+                      button.innerHTML = 'Submit Again';
                     });
                 }
             }
