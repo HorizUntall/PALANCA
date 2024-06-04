@@ -2,6 +2,10 @@ function go_profile(section, code) {
     window.location.href = `profile.html?section=${section}&code=${code}`;
 }
 
+function go_section(section) {
+    window.location.href = `section.html?section=${section}`;
+}
+
 function add_card(section, code, name, quote) {
     let container = document.querySelector(".card-container"); 
     let namelist = name.split(",");
@@ -63,6 +67,13 @@ function get_person() {
     let param1Value = params.get('section');
     let param2Value = params.get('code');
     return [param1Value, param2Value];
+}
+
+function get_section() {
+    let queryString = window.location.search;
+    let params = new URLSearchParams(queryString.substring(1));
+    let param1Value = params.get('section');
+    return param1Value;
 }
 
 function get_file_path(section) {
