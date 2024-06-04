@@ -145,8 +145,7 @@ function send_email() {
     let code = data[1];
     file_path = get_file_path(section);
 
-
-    button.value = 'Sending...'
+    button.value = 'Sending...';
     fetchData(file_path)
     .then(data => {
         if (data) {
@@ -164,8 +163,11 @@ function send_email() {
                     .then(function(response) {
                       console.log('SUCCESS!', response.status, response.text);
                       button.value = 'Submit';
+                      sender = '';
+                      message = '';
                     }, function(error) {
                       console.log('FAILED...', error);
+                      alert('Error Sending Message');
                       button.value = 'Submit';
                     });
                 }
