@@ -81,6 +81,7 @@ body {
         height: 100vh;
         background-color: #FFFBF1;
         transition: left 0.4s;
+        overflow: hidden;
     }
 
     .navbar-brand .logo {
