@@ -24,23 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.add("navbar-transparent");
     }
 
-    // Curie Button
-    const viewCurie = document.getElementById('curie_button');
-    viewCurie.addEventListener('click', () => {
-        console.log("Curie");
-    });
+    // // Curie Button
+    // const viewCurie = document.getElementById('curie_button');
+    // viewCurie.addEventListener('click', () => {
+    //     console.log("Curie");
+    // });
 
-    //Einstein Button
-    const viewEinstein = document.getElementById('einstein_button');
-    viewEinstein.addEventListener('click', () => {
-        console.log("Einstein")
-    });
+    // //Einstein Button
+    // const viewEinstein = document.getElementById('einstein_button');
+    // viewEinstein.addEventListener('click', () => {
+    //     console.log("Einstein")
+    // });
 
-    //Tesla Button
-    const viewTesla = document.getElementById('tesla_button');
-    viewTesla.addEventListener('click', () =>{
-        console.log("Tesla")
-    })
+    // //Tesla Button
+    // const viewTesla = document.getElementById('tesla_button');
+    // viewTesla.addEventListener('click', () =>{
+    //     console.log("Tesla")
+    // })
 
     // Parallax
     let title = document.getElementById('asilakon_title');
