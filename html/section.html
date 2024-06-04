@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="../css/section.css">
     <script src="../js/main.js"></script>
     <script>
-        window.onload = load_cards(get_section());
-    </script>
+        window.onload = function() {
+            let section = get_section();
+            console.log(section);
+            load_cards(section);
+            let bg_text = document.querySelector('.bg');
+            bg_text.innerHTML = `${section.toUpperCase()}`;
+        };
+    </script>    
 </head>
 <body>
 
-    <h1 class="bg"></h1>
+    <div class="bg">HELLO</div>
 
     <div class="card-container">
 

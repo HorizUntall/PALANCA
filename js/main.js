@@ -40,16 +40,12 @@ async function fetchData(filePath) {
 
 function load_cards(section) {
     var file_path;
-    let bg = document.querySelector(".bg"); 
     if (section == 'curie') {
         file_path = '../data/curie_sample.json';
-        bg.value = 'CURIE';
     } else if (section == 'tesla') {
         file_path = '../data/tesla_sample.json';
-        bg.value = 'TESLA';
     } else if (section == 'einstein') {
         file_path = '../data/einstein_sample.json';
-        bg.value = 'EINSTEIN';
     };
     fetchData(file_path)
     .then(data => {
@@ -63,6 +59,7 @@ function load_cards(section) {
         console.log('Failed to retrieve data');
         }
     });
+    
 }
 
 function get_person() {
