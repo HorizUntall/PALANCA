@@ -3,7 +3,7 @@ function go_profile(section, code) {
 }
 
 function go_section(section) {
-    window.location.href = `section.html?section=${section}`;
+    window.location.href = `html/section.html?section=${section}`;
 }
 
 function add_card(section, code, name, quote) {
