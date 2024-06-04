@@ -316,8 +316,9 @@ body {
         justify-content: center;
         cursor: pointer;
         border: none;
+        z-index: 10;
 
-        transition: transform 0.9s ease-out;
+        /* transition: transform 0.9s ease-out; */
     }
 
     #item1 {

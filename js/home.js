@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // });
 
         document.getElementById('background_label').style.transform = `translateY(${scrollPosition * 0.2}px)`;
-        document.getElementById('curie_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
-        document.getElementById('einstein_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
-        document.getElementById('tesla_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
+        // document.getElementById('curie_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
+        // document.getElementById('einstein_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
+        // document.getElementById('tesla_button').style.transform = `translateY(${scrollPosition * 0.01}px)`;
 
     });
 });
@@ -52,3 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function navigate(destination) {
     window.location.href = destination;
 };
+
+function scrollToSection(target) {
+    document.getElementById(target).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
