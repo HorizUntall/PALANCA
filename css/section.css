@@ -13,32 +13,107 @@ body {
     min-width: 500px;
 }
 
-nav {
+@font-face {
+    font-family: HelveticaWorld;
+    src: url("../fonts/HelveticaWorld.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: Amsterdam;
+    src: url("../fonts/Amsterdam.ttf") format('truetype');
+}
+
+/* Navbar Styles */
+.navbar {
     width: 100%;
-    height: 4em;
-
+    background-image: linear-gradient(to right, #2958BE, #D465D3);
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
-
-    color: white;
     align-items: center;
-    font-size: large;
-    background-image: linear-gradient(to right, #5270FF, #FC66C5);
+    padding: 0px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: auto;
+    padding-block: 5px;
 }
 
-.navbar-links {
+.navbar-transparent {
+    background: transparent;
+}
+
+.navbar-brand .logo {
+    height: auto;
+    width: 60px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-right: 40px;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 20px;
+    font-family: 'HelveticaWorld'
+}
+
+.navbar-toggle {
     display: none;
-    font-weight:lighter;
-    font-size: .8em;
+    flex-direction: column;
+    cursor: pointer;
+    padding-right: 30px;
 }
 
+.navbar-toggle .bar {
+    width: 25px;
+    border-radius: 2px;
+    height: 3px;
+    background-color: #fff;
+    margin: 2.5px 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 100%;
+        width: 100%;
+        background-color: #333;
+        transition: left 0.3s;
+    }
+
+    .navbar-brand .logo {
+        height: auto;
+        width: 40px;
+    }
+
+    .navbar-menu.active {
+        left: 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 10px 0;
+    }
+}
 
 .card-container {
     margin: 0;
+    margin-top: 5vh;
     width: 100%;
     padding: 3em 0;
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
