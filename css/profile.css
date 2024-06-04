@@ -54,6 +54,37 @@ nav {
     row-gap: 1.5em;
 }
 
+
+.prev-next {
+    display: flex;
+    width: 120%;
+    justify-content: space-between;
+    gap: 1em;
+
+}
+
+.prev-next button {
+    height: 2em;
+    width: 50%;
+    
+    color: white;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #615BD1;
+    border-radius: 0.3em;
+    box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.5);
+    border: none;
+}
+
+.prev-next button:hover {
+    cursor: pointer;
+    background-color: #4944b4;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+
+
+
 .photo {
     width: 120%;
     border-radius: 1em;
@@ -93,8 +124,11 @@ nav {
     width:18%;
 }
 
-button {
+#send {
     height: 2.5em;
+
+    margin: 0 0 2em 0;
+    width: 25%;
     
     color: white;
     font-size: 1.2em;
@@ -105,7 +139,7 @@ button {
     border: none;
 }
 
-button:hover {
+#send:hover {
     cursor: pointer;
     background-color: #4944b4;
     transition: all .2s ease;
@@ -115,11 +149,6 @@ button:hover {
 #message {
     margin: 1em 0 0 0;
     width: 60%;
-}
-
-#send{
-    margin: 0 0 2em 0;
-    width: 20%;
 }
 
 textarea {
@@ -176,41 +205,23 @@ textarea:hover {
 
 .bg {
     margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
 
     position: fixed;
-
-    user-select: none;
-    color: rgb(168,97,213, 0.09);
-    font-size: 30vw;
-    z-index: -1;
-}
-
-#section {
-    position: absolute;
     bottom: 0;
     right: 0;
 
-    color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:last baseline;
+
+    user-select: none;
+    color: rgb(168,97,213, 0.09);
+    font-size: 25vw;
+    font-weight: bold;
+    z-index: -1;
 }
-
-#nickname {
-    margin:0;
-    
-    position: absolute;
-    top: 0; left: 0;
-    transform-origin: 0 100%;
-    transform: rotate(90deg) translateX(-30%);
-
-    display: block;
-    
-    color:rgba(127, 17, 224, 0.1)
-    ;
-   
-}
-
 
 /* PHONE CONFIGURATIONS*/
 

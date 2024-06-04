@@ -11,6 +11,7 @@
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+    <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
 
@@ -18,9 +19,28 @@
         <div id="section"></div>
         <div id="nickname"></div>
     </h1>
+    <h1 class="bg">CURIE</h1>
 
     <div class="card-container">
 
+        <div class="card">
+
+            <span class="prev-next">
+                <button id="previous">Previous</button>
+                <button id="next">Next</button>
+            </span>
+
+            <img class="photo" src="..\media\images\Curie\cagawin.JPG" alt="image">
+            
+            <span class="name"><span id="surname">Agawin, </span>Caryl Jan Pauline</span>
+            
+            <span class="quote">
+                <img src="..\media\images\quote.png" alt="image">
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+            </span>
+            <textarea placeholder="Sender (Optional)" id="sender" wrap="hard" maxlength="50"></textarea>
+            <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
+            <button id="send">Submit</button>
     </div>
 </body>
 </html>
