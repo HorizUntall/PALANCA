@@ -192,5 +192,11 @@ function send_email() {
     
 }
 
-
+function nextAndscroll(page, target) {
+    console.log('SCORONSDF');
+    window.location.href= page;
+    document.getElementById(target).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
   

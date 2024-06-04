@@ -53,3 +53,10 @@ function scrollToSection(target) {
         behavior: 'smooth'
     });
 }
+
+function nextAndscroll(page, target) {
+    window.location.href= page;
+    document.getElementById(target).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
