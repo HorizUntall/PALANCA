@@ -18,7 +18,7 @@ function add_card(section, code, name, quote) {
         <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
         
         <span class="quote">
-            <img src="../media/images/image.png" alt="image">
+            <img src="../media/images/quote.png" alt="image">
             <p>"${quote}"</p>
         </span>
     </div>
@@ -151,7 +151,6 @@ function design_bg(section, name) {
     container.innerHTML = '';
     let newText = `
     <div id="section">${section.toUpperCase()}</div>
-    <div id="nickname">${name.toUpperCase()}</div>
     `
     container.innerHTML += newText;
 }

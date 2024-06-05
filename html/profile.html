@@ -28,7 +28,9 @@
             </div>
             <ul class="navbar-menu">
                 <li><a href="../home.html#homescreen">Home</a></li>
-                <li><a href="../home.html#sections">Sections</a></li>
+                <li><a onclick="window.location.href = `section.html?section=curie`">Curie</a></li>
+                <li><a onclick="window.location.href = `section.html?section=einstein`">Einstein</a></li>
+                <li><a onclick="window.location.href = `section.html?section=tesla`">Tesla</a></li>
                 <li><a href="../home.html#about">About</a></li>
             </ul>
         </nav>
@@ -36,7 +38,6 @@
 
     <h1 class="bg">
         <div id="section"></div>
-        <div id="nickname"></div>
     </h1>
     <h1 class="bg">CURIE</h1>
 
@@ -44,22 +45,6 @@
 
         <div class="card">
 
-            <span class="prev-next">
-                <button id="previous">Previous</button>
-                <button id="next">Next</button>
-            </span>
-
-            <img class="photo" src="..\media\images\Curie\cagawin.JPG" alt="image">
-            
-            <span class="name"><span id="surname">Agawin, </span>Caryl Jan Pauline</span>
-            
-            <span class="quote">
-                <img src="..\media\images\quote.png" alt="image">
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-            </span>
-            <textarea placeholder="Sender (Optional)" id="sender" wrap="hard" maxlength="50"></textarea>
-            <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
-            <button id="send">Submit</button>
     </div>
 </body>
 </html>

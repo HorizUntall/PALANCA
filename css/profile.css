@@ -51,7 +51,8 @@ body {
     font-size: 18px;
     font-weight: normal;
     margin-left: 20px;
-    font-family: 'HelveticaWorld'
+    font-family: 'HelveticaWorld';
+    cursor: pointer;
 }
 
 .navbar-toggle {
@@ -78,7 +79,7 @@ body {
         top: 0px;
         left: -100%;
         width: 40%;
-        height: 100vh;
+        height: 1000vh;
         background-color: #FFFBF1;
         transition: left 0.4s;
         overflow: hidden;
@@ -91,7 +92,7 @@ body {
 
     .navbar-menu.active {
         left: 0;
-        height: 100vh;
+        height: 1000vh;
     }
 
     .navbar-toggle {
