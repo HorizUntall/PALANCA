@@ -115,12 +115,20 @@ function get_person_data() {
     });
 }
 
+function back_tosections() {
+    data = get_person();
+    window.location.href = `section.html?section=${data[0]}`;
+}
+
 function update_profile(section, code, name, quote) {
     let container = document.querySelector(".card-container"); 
     container.innerHTML = '';
     let namelist = name.split(",");
     let new_card = `
     <div class="card">
+        <span class="prev-next">
+            <button id="back" onclick="back_tosections()">Back</button>
+        </span>
         <img class="photo" src="../media/images/${section}/${code}.JPG" alt="image">
         
         <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>

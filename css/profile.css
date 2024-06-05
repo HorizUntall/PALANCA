@@ -132,10 +132,10 @@ body {
 
 .prev-next {
     display: flex;
-    width: 120%;
-    justify-content: space-between;
+    align-self:flex-start;
+    width: 30%;
     gap: 1em;
-
+    margin-left: -25px;
 }
 
 .prev-next button {
