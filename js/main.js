@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 function go_profile(section, code) {
     window.location.href = `profile.html?section=${section}&code=${code}`;
@@ -11,9 +10,10 @@ function go_section(section) {
 function add_card(section, code, name, quote) {
     let container = document.querySelector(".card-container"); 
     let namelist = name.split(",");
+    let img_element1 = `<img class="photo" src="../media/images/${section}/${code}.jpg" alt="image">`;
     let new_card = `
     <div class="card" onclick="go_profile('${section}','${code}')">
-        <img class="photo" src="../media/images/${section}/${code}.JPG" alt="image">
+        ${img_element1}
         
         <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
         
@@ -22,7 +22,7 @@ function add_card(section, code, name, quote) {
             <p>"${quote}"</p>
         </span>
     </div>
-    `
+    `;
     container.innerHTML += new_card;
 }
 
