@@ -1,7 +1,11 @@
-html{
+html, body {
+    margin: 0;
+}
+
+html {
     height: 100%;
     width: 100%;
-   }
+}
 
 body {
     width: 100%;
@@ -85,12 +89,13 @@ body {
         flex-direction: column;
         padding-top: 50px;
         position: absolute;
-        top: 0px;
+        top: 0;
         left: -100%;
         width: 40%;
         height: 100vh;
         background-color: #FFFBF1;
         transition: left 0.4s;
+        overflow: hidden;
     }
 
     .navbar-brand .logo {
@@ -100,7 +105,6 @@ body {
 
     .navbar-menu.active {
         left: 0;
-        height: 100vh;
     }
 
     .navbar-toggle {

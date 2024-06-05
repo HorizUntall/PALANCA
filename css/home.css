@@ -77,6 +77,7 @@ body {
         height: 100vh;
         background-color: #FFFBF1;
         transition: left 0.4s;
+        overflow: hidden;
     }
 
     .navbar-brand .logo {
@@ -261,7 +262,7 @@ body {
         color: #E9E7F9;
         font-weight: bolder;
         transform: rotate(0deg);
-        z-index: -10;
+        z-index: -100;
         position: absolute;
         left: 0;
         /* transform: translateY(-50%); */
@@ -269,7 +270,7 @@ body {
         /* font-size: 200px; */
         font-size: 20vw;
         /* margin-top: calc(100vh); */
-        transition: transform 0.1s ease-out;
+        transition: transform 0.3s ease-out;
         margin-top: -25vh;
     }
     
@@ -326,20 +327,6 @@ body {
         z-index: 10;
 
         /* transition: transform 0.9s ease-out; */
-    }
-
-    #item1 {
-        overflow: hidden;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 25%;
-        height: auto;
-        /* margin-right: -200px;
-        margin-bottom: -300px; */
-        margin-right: -10%;
-        margin-bottom: -15%;
-        z-index: -10;
     }
 
 }
