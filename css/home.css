@@ -418,3 +418,11 @@ body {
 
 }
 
+.about {
+    font-family: 'HelveticaWorld';
+    font-size: 2.5vh;
+    font-weight: bold;
+    /* width: calc(auto + 20px); */
+    text-align: center;
+    margin: 2.5vh;
+}
