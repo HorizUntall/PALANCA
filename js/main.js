@@ -129,7 +129,7 @@ function update_profile(section, code, name, quote) {
         <span class="prev-next">
             <button id="back" onclick="back_tosections()">Back</button>
         </span>
-        <img class="photo" src="../media/images/${section}/${code}.JPG" alt="image">
+        <img class="photo" src="../media/images/${section}/${code}.jpg" alt="image">
         
         <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
         
@@ -173,6 +173,11 @@ function send_email() {
             for (let i = 0; i < data.length; i++) {
                 let person = data[i];
                 if (person['Code'] == code) {
+
+                    if (person['Email'] != '') {
+                        button.innerHTML = 'No Email';
+                        return
+                    }
 
                     var templateParams = {
                         from_name: sender,
