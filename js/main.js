@@ -105,7 +105,7 @@ function get_person_data() {
             for (let i = 0; i < data.length; i++) {
                 let person = data[i];
                 if (person['Code'] == code) {
-                    update_profile(section, code, person['Name'], person['Quote']);
+                    update_profile(section, code, person['Name'], person['Quote'], person['Email']);
                     break;
                 }
             }
@@ -120,10 +120,16 @@ function back_tosections() {
     window.location.href = `section.html?section=${data[0]}`;
 }
 
-function update_profile(section, code, name, quote) {
+function update_profile(section, code, name, quote, email) {
     let container = document.querySelector(".card-container"); 
     container.innerHTML = '';
     let namelist = name.split(",");
+    let button_content;
+    if (email) {
+        button_content = '<button id="send" onclick="send_email()">Submit</button>';
+    } else {
+        button_content = '<button id="send">No Email</button>';
+    }
     let new_card = `
     <div class="card">
         <span class="prev-next">
@@ -139,7 +145,7 @@ function update_profile(section, code, name, quote) {
         </span>
         <textarea placeholder="Sender (or Codename)" id="sender" wrap="hard" maxlength="50"></textarea>
         <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
-        <button id="send" onclick="send_email()">Submit</button>
+        ${button_content}
     </div>
     `
     container.innerHTML += new_card;
@@ -173,11 +179,6 @@ function send_email() {
             for (let i = 0; i < data.length; i++) {
                 let person = data[i];
                 if (person['Code'] == code) {
-
-                    if (person['Email'] != '') {
-                        button.innerHTML = 'No Email';
-                        return
-                    }
 
                     var templateParams = {
                         from_name: sender,
