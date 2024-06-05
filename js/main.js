@@ -146,7 +146,7 @@ function update_profile(section, code, name, quote) {
     design_bg(section, namelist[0].trim());
 }
 
-function design_bg(section, name) {
+function design_bg(section) {
     let container = document.querySelector(".bg"); 
     container.innerHTML = '';
     let newText = `
