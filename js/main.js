@@ -10,13 +10,11 @@ function go_section(section) {
 function add_card(section, code, name, quote) {
     let container = document.querySelector(".card-container"); 
     let namelist = name.split(",");
-    let img_element1 = `<img class="photo" src="../media/images/${section}/${code}.jpg" alt="image">`;
-    let img_element2 = `<img class="photo" src="../media/images/image.png" alt="image">`;
     let new_card1 = `
         <div class="card" onclick="go_profile('${section}','${code}')">
-            ${img_element1}
+            <img class="photo" id="${code}" alt="image">;
             
-            <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
+            <span class="name"><span id="surname">${namelist[0]}, </span>${namelist[1]}</span>
             
             <span class="quote">
                 <img src="../media/images/quote.png" alt="image">
@@ -24,19 +22,24 @@ function add_card(section, code, name, quote) {
             </span>
         </div>
         `;
-    let new_card2 = `
-    <div class="card" onclick="go_profile('${section}','${code}')">
-        ${img_element2}
-        
-        <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
-        
-        <span class="quote">
-            <img src="../media/images/quote.png" alt="image">
-            <p>"${quote}"</p>
-        </span>
-    </div>
-    `;
-    container.innerHTML += new_card1;
+        container.innerHTML += new_card1;
+        console.log(`Added ${code} Card`);
+    // try {
+    //     let photo = document.getElementById(`${code}`); 
+    //     photo.src = `../media/images/${section}/${code}.jpg`;
+    //     console.log(`Added ${code} Real Image`);
+    // } catch (error) {
+    //     console.log(`CAUGT ${code} ERROR`);
+    //     let photo = document.getElementById(`${code}`); 
+    //     photo.src = "../media/images/image.png";
+    // }
+
+    let photo = document.getElementById(`${code}`); 
+    photo.src = `../media/images/${section}/${code}.jpg`;
+    photo.onerror = function() {
+    console.error('Error: Image failed to load!');
+        this.src = "../media/images/image.png";
+    };
     
 }
 
