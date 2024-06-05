@@ -12,7 +12,7 @@ function add_card(section, code, name, quote) {
     let namelist = name.split(",");
     let new_card1 = `
         <div class="card" onclick="go_profile('${section}','${code}')">
-            <img class="photo" id="${code}" alt="image">;
+            <img class="photo" id="${code}" alt="image">
             
             <span class="name"><span id="surname">${namelist[0]}, </span>${namelist[1]}</span>
             
