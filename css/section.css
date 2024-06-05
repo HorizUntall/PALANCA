@@ -92,7 +92,7 @@ body {
         top: 0;
         left: -100%;
         width: 40%;
-        height: 100vh;
+        height: 1000vh;
         background-color: #FFFBF1;
         transition: left 0.4s;
         overflow: hidden;
