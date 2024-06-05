@@ -11,9 +11,22 @@ function add_card(section, code, name, quote) {
     let container = document.querySelector(".card-container"); 
     let namelist = name.split(",");
     let img_element1 = `<img class="photo" src="../media/images/${section}/${code}.jpg" alt="image">`;
-    let new_card = `
+    let img_element2 = `<img class="photo" src="../media/images/image.png" alt="image">`;
+    let new_card1 = `
+        <div class="card" onclick="go_profile('${section}','${code}')">
+            ${img_element1}
+            
+            <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
+            
+            <span class="quote">
+                <img src="../media/images/quote.png" alt="image">
+                <p>"${quote}"</p>
+            </span>
+        </div>
+        `;
+    let new_card2 = `
     <div class="card" onclick="go_profile('${section}','${code}')">
-        ${img_element1}
+        ${img_element2}
         
         <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
         
@@ -23,7 +36,8 @@ function add_card(section, code, name, quote) {
         </span>
     </div>
     `;
-    container.innerHTML += new_card;
+    container.innerHTML += new_card1;
+    
 }
 
 async function fetchData(filePath) {
@@ -43,11 +57,11 @@ async function fetchData(filePath) {
 function load_cards(section) {
     var file_path;
     if (section == 'curie') {
-        file_path = '../data/curie_sample.json';
+        file_path = '../data/curie.json';
     } else if (section == 'tesla') {
-        file_path = '../data/tesla_sample.json';
+        file_path = '../data/tesla.json';
     } else if (section == 'einstein') {
-        file_path = '../data/einstein_sample.json';
+        file_path = '../data/einstein.json';
     };
     fetchData(file_path)
     .then(data => {
