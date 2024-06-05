@@ -96,11 +96,11 @@ function get_section() {
 function get_file_path(section) {
     var file_path;
     if (section == 'curie') {
-        file_path = '../data/curie_sample.json';
+        file_path = '../data/curie.json';
     } else if (section == 'tesla') {
-        file_path = '../data/tesla_sample.json';
+        file_path = '../data/tesla.json';
     } else if (section == 'einstein') {
-        file_path = '../data/einstein_sample.json';
+        file_path = '../data/einstein.json';
     };
     return file_path
 }
