@@ -7,12 +7,21 @@ function go_section(section) {
     window.location.href = `html/section.html?section=${section}`;
 }
 
+function replace_img(code) {
+    let photo = document.getElementById(`${code}`); 
+    photo.onerror = function() {
+        console.log('ERROR LOADING THIS SHIT');
+        photo.src = "../media/images/image.png";
+    };
+}
+
 function add_card(section, code, name, quote) {
     let container = document.querySelector(".card-container"); 
     let namelist = name.split(",");
+    console.log(namelist);
     let new_card1 = `
         <div class="card" onclick="go_profile('${section}','${code}')">
-            <img class="photo" id="${code}" alt="image">
+            <img class="photo" id="${code}" src = "../media/images/${section}/${code}.jpg" alt="image">
             
             <span class="name"><span id="surname">${namelist[0]}, </span>${namelist[1]}</span>
             
@@ -23,15 +32,6 @@ function add_card(section, code, name, quote) {
         </div>
         `;
         container.innerHTML += new_card1;
-        console.log(`Added ${code} Card`);
-
-    let photo = document.getElementById(`${code}`); 
-    photo.src = `../media/images/${section}/${code}.jpg`;
-    photo.onerror = function() {
-    console.error('Error: Image failed to load!');
-        this.src = "../media/images/image.png";
-    };
-    
 }
 
 async function fetchData(filePath) {
