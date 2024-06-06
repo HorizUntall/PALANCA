@@ -188,7 +188,7 @@ function send_email() {
                 let person = data[i];
                 if (person['Code'] == code) {
 
-                    if (message.trim().length === 0  || from_name.trim().length === 0) {
+                    if (message.trim().length === 0  || sender.trim().length === 0) {
                         alert('Input all fields');
                         button.innerHTML = 'Submit';
                     } else {
