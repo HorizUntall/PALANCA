@@ -190,6 +190,7 @@ function send_email() {
 
                     if (message.trim().length === 0  || from_name.trim().length === 0) {
                         alert('Input all fields');
+                        button.innerHTML = 'Submit';
                     } else {
                         var templateParams = {
                             from_name: sender,
