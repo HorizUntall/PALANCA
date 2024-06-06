@@ -1,7 +1,3 @@
-html, body {
-    margin: 0;
-}
-
 html {
     height: 100%;
     width: 100%;
@@ -14,7 +10,7 @@ body {
 
     color: #737373;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 500px;
+    /* min-width: 500px; */
 }
 
 @font-face {
@@ -217,7 +213,7 @@ a:hover {
 
 /* DESKTOP CONFIGURATIONS*/
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 600px) {
     .burger-menu {
         display: none;
     }
@@ -226,4 +222,4 @@ a:hover {
         display: flex;
     }
 
-}
+} */
