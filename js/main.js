@@ -18,7 +18,7 @@ function add_card(section, code, name, quote) {
             
             <span class="quote">
                 <img src="../media/images/quote.png" alt="image">
-                <p>"${quote}"</p>
+                <p>${quote}</p>
             </span>
         </div>
         `;
