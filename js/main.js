@@ -24,15 +24,6 @@ function add_card(section, code, name, quote) {
         `;
         container.innerHTML += new_card1;
         console.log(`Added ${code} Card`);
-    // try {
-    //     let photo = document.getElementById(`${code}`); 
-    //     photo.src = `../media/images/${section}/${code}.jpg`;
-    //     console.log(`Added ${code} Real Image`);
-    // } catch (error) {
-    //     console.log(`CAUGT ${code} ERROR`);
-    //     let photo = document.getElementById(`${code}`); 
-    //     photo.src = "../media/images/image.png";
-    // }
 
     let photo = document.getElementById(`${code}`); 
     photo.src = `../media/images/${section}/${code}.jpg`;
@@ -197,35 +188,32 @@ function send_email() {
                 let person = data[i];
                 if (person['Code'] == code) {
 
-                    var templateParams = {
-                        from_name: sender,
-                        message: message,
-                        send_to: person['Email']
-                    };
-
-                    var archiveData = {
-                        to_name: btoa(code),
-                        to_email: btoa(person['Email']),
-                        from_name: btoa(sender),
-                        message: btoa(message)
+                    if (message.trim().length === 0  || from_name.trim().length === 0) {
+                        alert('I all fields');
+                    } else {
+                        var templateParams = {
+                            from_name: sender,
+                            message: message,
+                            send_to: person['Email']
+                        };
+    
+                        // If u see this and youre planning on doing smth, send me an email pls raphaelbihag00@gmail.com
+                        emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            button.innerHTML = 'Submit';
+                            alert('Success Sending Message');
+                            writeJsonToFile(archiveData, '../data/msg.json');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            alert('Error Sending Message');
+                            button.innerHTML = 'Submit Again';
+                        });
                     }
-
-                    // If u see this and youre planning on doing smth, send me an email pls raphaelbihag00@gmail.com
-                    emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        button.innerHTML = 'Submit';
-                        alert('Success Sending Message');
-                        writeJsonToFile(archiveData, '../data/msg.json');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                        alert('Error Sending Message');
-                        button.innerHTML = 'Submit Again';
-                    });
                 }
             }
         } else {
-        console.log('Failed to retrieve data');
+            console.log('Failed to retrieve data');
         }
     });
     
