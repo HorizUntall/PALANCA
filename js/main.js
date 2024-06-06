@@ -189,7 +189,7 @@ function send_email() {
                 if (person['Code'] == code) {
 
                     if (message.trim().length === 0  || from_name.trim().length === 0) {
-                        alert('I all fields');
+                        alert('Input all fields');
                     } else {
                         var templateParams = {
                             from_name: sender,
