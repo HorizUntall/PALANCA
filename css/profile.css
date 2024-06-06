@@ -1,6 +1,6 @@
 html{
     height: 100%;
-    width: 110%;
+    width: 100%;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 
     color: #737373;
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 500px;
+    /* min-width: 500px; */
 }
 
 /* Navbar Styles */
@@ -159,7 +159,10 @@ body {
     -webkit-transition: all .2s ease;
 }
 
-
+#back {
+    padding-inline: 20px;
+    width: auto;
+}
 
 .photo {
     width: 120%;
@@ -201,10 +204,13 @@ body {
 }
 
 #send {
-    height: 2.5em;
+    /* height: 2.5em; */
+    height: auto;   
 
     margin: 0 0 2em 0;
-    width: 25%;
+    /* width: 25%; */
+    width: auto;
+    padding: 10px;
     
     color: white;
     font-size: 1.2em;
