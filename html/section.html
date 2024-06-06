@@ -14,7 +14,18 @@
             load_cards(section);
             let bg_text = document.querySelector('.bg');
             bg_text.innerHTML = `${section.toUpperCase()}`;
+            adjustFontSize(bg_text);
+            window.addEventListener('resize', () => adjustFontSize(bg_text));
         };
+
+        // For auto resizing of the bg text font size
+        function adjustFontSize(element) {
+            let parentWidth = window.innerWidth;
+            let fontSize = parseInt(window.getComputedStyle(element).fontSize);
+            let textWidth = element.scrollWidth;
+            let newSize = fontSize * parentWidth / textWidth;
+            element.style.fontSize = `${newSize}px`
+        }
     </script>    
 </head>
 

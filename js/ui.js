@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             hub.style.marginTop = scrollPosition * -0.5 + 'px';
 
         }   
+
+
         // viewStudents.forEach(object => {
         //     object.style.transform = `translateY(${scrollPosition * 0.3}px)`;
         // });
