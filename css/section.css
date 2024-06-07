@@ -139,15 +139,17 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 1.5em;
+    border-style: solid;
 }
 
 .photo {
     width: 100%;
     height: auto;
+    max-height: auto;
     border-radius: 1em;
     box-shadow: 0em 0.5em 1em rgba(0, 0, 0, 0.6);
     z-index: 1;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 
