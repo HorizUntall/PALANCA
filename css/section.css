@@ -126,13 +126,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start; /* Align items to the start of the flex container */
     gap: 4em 0;
 }
 
 .card {
     width: 300px;
     padding: 0 4em;
-
+    align-items: center; /* Center items horizontally */
     display: flex;
     flex-direction: column;
     row-gap: 1.5em;
@@ -140,6 +141,7 @@ body {
 
 .photo {
     width: 100%;
+    height: auto;
     border-radius: 1em;
     box-shadow: 0em 0.5em 1em rgba(0, 0, 0, 0.6);
     z-index: 1;
