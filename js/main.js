@@ -21,7 +21,7 @@ function add_card(section, code, name, quote) {
     console.log(namelist);
     let new_card1 = `
         <div class="card" onclick="go_profile('${section}','${code}')">
-            <img class="photo" id="${code}" src = "../media/images/${section}/${code}.jpg" alt="image">
+            <img class="photo" id="${code}" src = "../media/images/${section}/${code}.webp" alt="image">
             
             <span class="name"><span id="surname">${namelist[0]}, </span>${namelist[1]}</span>
             
@@ -145,7 +145,7 @@ function update_profile(section, code, name, quote, email) {
         <span class="prev-next">
             <button id="back" onclick="back_tosections()">Back</button>
         </span>
-        <img class="photo" src="../media/images/${section}/${code}.jpg" alt="image">
+        <img class="photo" src="../media/images/${section}/${code}.webp" alt="image">
         
         <span class="name"><span id="surname">${namelist[0].trim()}, </span>${namelist[1].trim()}</span>
         
