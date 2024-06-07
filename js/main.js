@@ -169,70 +169,20 @@ function design_bg(section) {
     container.innerHTML += newText;
 }
 
-function send_email() {
-    emailjs.init('4G8nmjkLjUIn1czkk');
-    let sender = document.querySelector("#sender").value; 
-    let message = document.querySelector("#txtbox").value;
-    let button =  document.querySelector("#send");
-
-    let data = get_person();
-    let section = data[0];
-    let code = data[1];
-    file_path = get_file_path(section);
-
-    button.innerHTML = 'Sending...';
-    fetchData(file_path)
-    .then(data => {
-        if (data) {
-            for (let i = 0; i < data.length; i++) {
-                let person = data[i];
-                if (person['Code'] == code) {
-
-                    if (message.trim().length === 0  || sender.trim().length === 0) {
-                        alert('Input all fields');
-                        button.innerHTML = 'Submit';
-                    } else {
-                        var templateParams = {
-                            from_name: sender,
-                            message: message,
-                            send_to: person['Email']
-                        };
-    
-                        // If u see this and youre planning on doing smth, send me an email pls raphaelbihag00@gmail.com
-                        emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
-                        .then(function(response) {
-                            console.log('SUCCESS!', response.status, response.text);
-                            button.innerHTML = 'Submit';
-                            alert('Success Sending Message');
-                            writeJsonToFile(archiveData, '../data/msg.json');
-                        }, function(error) {
-                            console.log('FAILED...', error);
-                            alert('Error Sending Message');
-                            button.innerHTML = 'Submit Again';
-                        });
-                    }
-                }
-            }
-        } else {
-            console.log('Failed to retrieve data');
-        }
-    });
-    
-}
-
-// async function send_email() {
+// function send_email() {
+//     emailjs.init('4G8nmjkLjUIn1czkk');
 //     let sender = document.querySelector("#sender").value; 
 //     let message = document.querySelector("#txtbox").value;
-//     let button = document.querySelector("#send");
+//     let button =  document.querySelector("#send");
 
 //     let data = get_person();
 //     let section = data[0];
 //     let code = data[1];
-//     let file_path = get_file_path(section);
+//     file_path = get_file_path(section);
 
 //     button.innerHTML = 'Sending...';
 //     fetchData(file_path)
-//     .then(async data => {
+//     .then(data => {
 //         if (data) {
 //             for (let i = 0; i < data.length; i++) {
 //                 let person = data[i];
@@ -242,33 +192,24 @@ function send_email() {
 //                         alert('Input all fields');
 //                         button.innerHTML = 'Submit';
 //                     } else {
-//                         let emailData = {
-//                             sender: sender,
+//                         var templateParams = {
+//                             from_name: sender,
 //                             message: message,
-//                             recipient: person['Email']
+//                             send_to: person['Email']
 //                         };
-                        
-//                         try {
-//                             // let response = await fetch('http://127.0.0.1:5000/send_email', {
-//                             let response = await fetch('http://rayuntal.pythonanywhere.com/send_email', {
-//                                 method: 'POST',
-//                                 headers: {
-//                                     'Content-Type': 'application/json'
-//                                 },
-//                                 body: JSON.stringify(emailData)
-//                             });
-//                             let result = await response.json();
-//                             if (result.status === 'success') {
-//                                 alert('Success Sending Message');
-//                             } else {
-//                                 alert('Error Sending Message: ' + result.message);
-//                             }
-//                         } catch (error) {
-//                             console.error('Error:', error);
-//                             alert('Error Sending Message');
-//                         } finally {
+    
+//                         // If u see this and youre planning on doing smth, send me an email pls raphaelbihag00@gmail.com
+//                         emailjs.send('service_jfl3llo', 'template_l4tgtk7', templateParams)
+//                         .then(function(response) {
+//                             console.log('SUCCESS!', response.status, response.text);
 //                             button.innerHTML = 'Submit';
-//                         }
+//                             alert('Success Sending Message');
+//                             writeJsonToFile(archiveData, '../data/msg.json');
+//                         }, function(error) {
+//                             console.log('FAILED...', error);
+//                             alert('Error Sending Message');
+//                             button.innerHTML = 'Submit Again';
+//                         });
 //                     }
 //                 }
 //             }
@@ -276,7 +217,66 @@ function send_email() {
 //             console.log('Failed to retrieve data');
 //         }
 //     });
+    
 // }
+
+async function send_email() {
+    let sender = document.querySelector("#sender").value; 
+    let message = document.querySelector("#txtbox").value;
+    let button = document.querySelector("#send");
+
+    let data = get_person();
+    let section = data[0];
+    let code = data[1];
+    let file_path = get_file_path(section);
+
+    button.innerHTML = 'Sending...';
+    fetchData(file_path)
+    .then(async data => {
+        if (data) {
+            for (let i = 0; i < data.length; i++) {
+                let person = data[i];
+                if (person['Code'] == code) {
+
+                    if (message.trim().length === 0  || sender.trim().length === 0) {
+                        alert('Input all fields');
+                        button.innerHTML = 'Submit';
+                    } else {
+                        let emailData = {
+                            sender: sender,
+                            message: message,
+                            recipient: person['Email']
+                        };
+                        
+                        try {
+                            // let response = await fetch('http://127.0.0.1:5000/send_email', {
+                            let response = await fetch('http://rayuntal.pythonanywhere.com/send_email', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(emailData)
+                            });
+                            let result = await response.json();
+                            if (result.status === 'success') {
+                                alert('Success Sending Message');
+                            } else {
+                                alert('Error Sending Message: ' + result.message);
+                            }
+                        } catch (error) {
+                            console.error('Error:', error);
+                            alert('Error Sending Message');
+                        } finally {
+                            button.innerHTML = 'Submit';
+                        }
+                    }
+                }
+            }
+        } else {
+            console.log('Failed to retrieve data');
+        }
+    });
+}
 
 
 function writeJsonToFile(data, filename) {
