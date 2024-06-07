@@ -122,6 +122,7 @@ body {
     /* margin-top: 5vh; */
     margin-top: 50px;
     width: 100%;
+    height: auto;
     padding: 3em 0;
     display: flex;
     flex-wrap: wrap;
@@ -132,6 +133,7 @@ body {
 
 .card {
     width: 300px;
+    height: auto;
     padding: 0 4em;
     align-items: center; /* Center items horizontally */
     display: flex;
