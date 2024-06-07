@@ -149,7 +149,7 @@ function update_profile(section, code, name, quote, email) {
         
         <span class="quote">
             <img src="../media/images/quote.png" alt="image">
-            <p>"${quote}"</p>
+            <p>${quote}</p>
         </span>
         <textarea placeholder="Sender (or Codename)" id="sender" wrap="hard" maxlength="50"></textarea>
         <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
