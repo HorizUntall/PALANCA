@@ -167,14 +167,12 @@ body {
 }
 
 .photo {
-    /* width: 120%; */
-    max-width: 100%;
+    width: 120%;
     height: auto;
     border-radius: 1em;
     box-shadow: 0em 0.5em 1em rgba(0, 0, 0, 0.6);
     z-index: 1;
-    /* object-fit: cover; */
-    align-self: flex-start;
+    object-fit: cover;
 }
 
 .name {
