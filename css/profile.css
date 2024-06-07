@@ -187,6 +187,10 @@ body {
     z-index: 5;
 }
 
+.note {
+    margin-top: -40px;
+}
+
 
 #surname {
     color: #615BD1

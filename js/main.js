@@ -132,6 +132,8 @@ function update_profile(section, code, name, quote, email) {
     let container = document.querySelector(".card-container"); 
     container.innerHTML = '';
     let namelist = name.split(",");
+    let nameParts = name.split(", "); // Split at the comma and space. For the notes
+    let firstName = nameParts[1].split(" ")[0]; // Split the second part at the space and take the first element
     let button_content;
     if (email) {
         button_content = '<button id="send" onclick="send_email()">Submit</button>';
@@ -154,6 +156,7 @@ function update_profile(section, code, name, quote, email) {
         <textarea placeholder="Sender (or Codename)" id="sender" wrap="hard" maxlength="50"></textarea>
         <textarea placeholder="Leave me a message!" id="txtbox" wrap="hard"></textarea>
         ${button_content}
+        <div class="note">Note: Since your message will be sent from <b>Palangka's email address</b>, please note that you nor <b>${firstName}</b> won't be able to reply directly to it. If you wish to get a response, you could simply include your email address in your message so that <b>${firstName}</b> could mail you back hihi 😁</div>
     </div>
     `
     container.innerHTML += new_card;
