@@ -250,7 +250,7 @@ async function send_email() {
                         
                         try {
                             // let response = await fetch('http://127.0.0.1:5000/send_email', {
-                            let response = await fetch('http://rayuntal.pythonanywhere.com/send_email', {
+                            let response = await fetch('https://rayuntal.pythonanywhere.com/send_email', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'
