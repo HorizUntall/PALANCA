@@ -310,8 +310,9 @@ textarea:hover {
 
     user-select: none;
     color: rgb(168,97,213, 0.09);
-    font-size: 25vw;
-    font-weight: bold;
+    font-size: 20vw;
+    font-family: 'HelveticaWorld';
+    font-weight: bolder;
     z-index: -1;
 }
 
