@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asilakon Palanca</title>
+    <link rel="icon" href="../media/images/AsilakonLogo.webp" type="image/webp">
+    <link rel="stylesheet" href="../css/section.css">
+    <script src="../js/main.js"></script>
+    <script src="../js/ui.js"></script>
+    <script>
+        window.onload = function() {
+            let section = get_section();
+            console.log(section);
+            load_cards(section);
+            let bg_text = document.querySelector('.bg');
+            bg_text.innerHTML = `${section.toUpperCase()}`;
+            // adjustFontSize(bg_text);
+            // window.addEventListener('resize', () => adjustFontSize(bg_text));
+        };
+
+        // For auto resizing of the bg text font size
+        // function adjustFontSize(element) {
+        //     let parentWidth = window.innerWidth;
+        //     let fontSize = parseInt(window.getComputedStyle(element).fontSize);
+        //     let textWidth = element.scrollWidth;
+        //     let newSize = fontSize * parentWidth / textWidth;
+        //     element.style.fontSize = `${newSize}px`
+        // }
+    </script>    
+</head>
+
+
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="../media/images/AsilakonLogo.webp" alt="Logo" class="logo" onclick="window.location.href='../index.html'">
+            </div>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a onclick="window.location.href = `section.html?section=curie`">Curie</a></li>
+                <li><a onclick="window.location.href = `section.html?section=einstein`">Einstein</a></li>
+                <li><a onclick="window.location.href = `section.html?section=tesla`">Tesla</a></li>
+                <li><a href="../index.html#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="bg">HELLO</div>
+
+    <div class="card-container">
+
+
+    </div>
+</body>
+</html>
